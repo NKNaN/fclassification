@@ -1,7 +1,8 @@
 # simulation2.R
 (for data generation)
 input parameters:
-	B <- 200 # No. of simulation repetition
+
+	B <- 200 # No. of simulation repetition \n
 	n <- 400 # sample size
 	pn <- 400 # No. of predictors
 	prior_pi <- 0.4 # prior probabilities for two populations prior_pi and 1-prior_pi
@@ -20,12 +21,14 @@ input parameters:
 *	makeCluster(No. of multiprocess)
 
 outputs:
+
 	file_name_X # RDS data - dimension [400, 400, 100] - [n, pn, m] containing training and testing sets
 	file_name_Y # RDS data - dimension [400]
 	
 # fclassification.R
 (for classification of simulated data)
 input parameters:
+
 	B <- 200
 	
 	setting <- 8 # setting number(in total 8 general settings)
@@ -38,6 +41,7 @@ input parameters:
 *	makeCluster(No. of multiprocess)
 
 outputs:
+
 	file_name_evatxt # evaluation table
 	file_name_w_opt # optimal w
 	file_name_w_select # optimal w before last projection step, used for calculating FNR FPR
@@ -45,6 +49,7 @@ outputs:
 # fclassification_realdata.R
 (for classification of real data with 5-fold, 10-fold and 20-fold)
 input parameters:
+
 	file_name # pre-processed real data
 	K_fold # No. of k-fold
 	B # No. of repetition
@@ -52,11 +57,13 @@ input parameters:
 *	makeCluster(No. of multiprocess)
 
 outputs:
+
 	(same as above)
 
 # fclassification_realdata_leaveoneout.R
 (for classification of real data with leave-one-out)
 input parameters:
+
 	file_name # pre-processed real data
 	K_fold <- 121 # leave-one-out
 	B # No. of repetition
@@ -64,4 +71,5 @@ input parameters:
 *	makeCluster(No. of multiprocess)
 
 outputs:
+
 	(same as above)
